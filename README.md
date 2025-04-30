@@ -1,4 +1,4 @@
-# newportfolio
+
 
 # 🌐 My Portfolio Website
 
@@ -6,7 +6,7 @@ Welcome to my personal portfolio website! This site showcases my skills, project
 
 ## 🚀 Live Demo
 
-🔗 [Visit Portfolio](https://your-username.github.io/portfolio)  
+🔗 [Visit Portfolio](https://[your-username.github.io](https://rajayush.netlify.app/)/portfolio)  
 *(Replace with your actual live link)*
 
 ---
