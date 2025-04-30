@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Raj Ayush - Developer Portfolio</title>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <style> 
+   body {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      background-color: #0d0d0d; /* Dark background */
+      color: white; /* Light text */
+      font-family: Arial, sans-serif;
+    }
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: -1; /* Behind your content */
+    }
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background-color: #0e0f2d;
+      color: white;
+    }
+
+    /* Navbar Styling */
+    .navbar {
+      display: flex;
+      justify-content: center;
+      background-color: #1a1a2e;
+      padding: 15px 0;
+      gap: 40px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      padding: 8px 15px;
+      border-radius: 20px;
+    }
+    .navbar a:hover {
+      background-color: #00ffa3;
+      color: #000;
+    }
+
+    /* Hero Section Styling */
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 50px;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .hero h1 {
+      font-size: 50px;
+      line-height: 1.2;
+    }
+    .hero h1 span {
+      color: #ff4da6;
+    }
+    .hero button {
+      padding: 15px 25px;
+      border-radius: 30px;
+      cursor: pointer;
+    }
+    .hero .contact-btn {
+      border: 2px solid #ff4da6;
+      background: none;
+      color: white;
+    }
+    .hero .resume-btn {
+      background: linear-gradient(to right, #ff4da6, #8749ff);
+      border: none;
+      color: white;
+    }
+
+    /* Skills Section Styling */
+    .skills-section {
+      text-align: center;
+      padding: 30px 0;
+    }
+    .skills-section h2 {
+      font-size: 28px;
+      color: #b38fff;
+    }
+    .skills-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      padding: 20px;
+    }
+    .skill-card {
+      background: #14142b;
+      padding: 20px;
+      border-radius: 15px;
+      text-align: center;
+      width: 120px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+    .skill-card:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 15px rgba(255, 45, 32, 0.5);
+    }
+    .skill-card img {
+      height: 60px;
+      filter: invert(1);
+    }
+    .skill-card p {
+      margin-top: 10px;
+      color: #fff;
+    }
+
+    /* Education Section Styling */
+    .education-section {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 50px 20px;
+    }
+    .education-left img {
+      width: 400px;
+      max-width: 100%;
+    }
+    .education-right {
+      max-width: 600px;
+    }
+    .edu-card {
+      background: linear-gradient(145deg, #1e1e3f, #2c2c5a);
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 15px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .edu-card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 20px rgba(0, 255, 163, 0.5);
+    }
+    .edu-card h3 {
+      margin: 0;
+      color: #ffffff;
+    }
+    .edu-card p {
+      color: #bbbbff;
+    }
+    .edu-date {
+      color: #00ffa3;
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+
+    /* Scroll To Top Button */
+    .scroll-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      border: none;
+      background: linear-gradient(to right, #ff00cc, #3333ff);
+      padding: 15px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    .scroll-btn span {
+      font-size: 20px;
+      color: white;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="particles-js"></div>
+  <!-- Header -->
+  <div style="padding: 20px; font-size: 24px; font-weight: bold; color:#00ffa3;">
+   
+    Raj Ayush
+  </div>
+
+  <!-- Navbar -->
+  <div id="navbar" style="background-color: #333; padding: 10px; display: flex; flex-wrap: wrap; justify-content: space-around;">
+    <button onclick="toggleMenu()" style="background: #333; border: none; color: white; font-size: 20px; display: none;" id="menuButton">☰</button>
+    <div id="links" style="display: flex; flex-wrap: wrap; justify-content: center; width: 100%;">
+      <a href="#home" style="color: rgb(227, 225, 233); text-decoration: none; padding: 10px;" onmouseover="hover(this, 'lime')" onmouseout="unhover(this)">Home</a>
+      <a href="#about-me" style="color: rgb(234, 244, 238); text-decoration: none; padding: 10px;" onmouseover="hover(this, 'hotpink')" onmouseout="unhover(this)">About Me</a>
+      <a href="#education" style="color: rgb(227, 230, 234); text-decoration: none; padding: 10px;" onmouseover="hover(this, 'lime')" onmouseout="unhover(this)">Education</a>
+      <a href="#experience" style="color: white; text-decoration: none; padding: 10px;" onmouseover="hover(this, 'hotpink')" onmouseout="unhover(this)">Experience</a>
+      <a href="#projects" style="color: white; text-decoration: none; padding: 10px;" onmouseover="hover(this, 'lime')" onmouseout="unhover(this)">Projects</a>
+      <a href="#skills" style="color: white; text-decoration: none; padding: 10px;" onmouseover="hover(this, 'hotpink')" onmouseout="unhover(this)">Skills</a>
+      <a href="#contact" style="color: white; text-decoration: none; padding: 10px;" onmouseover="hover(this, 'lime')" onmouseout="unhover(this)">Contact</a>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <div style="max-width: 50%;">
+      
+      <h1>
+        Hello,<br>
+        This is <span>Raj Ayush</span>,<br>
+        I'm a Professional <span style="color: #00ffa3;">Software Developer</span>.
+      </h1>
+     
+      <a href="mailto:rajayush2167@gmail.com" class="btn contact-btn">CONTACT ME 👥</a>
+      <a href="https://drive.google.com/file/d/1gCkZGBCLRwZDkkMX2xp7iS-h46nbhkWI/view?usp=sharing" class="btn resume-btn" download>GET RESUME ⬇</a>
+    </div>
+   
+    <!-- Fake Code Editor -->
+    <div style="background: #1e1e3f; border-radius: 10px; padding: 20px; color: #fff; max-width: 45%;">
+      <pre style="margin:0; font-family: monospace; font-size:14px;">
+<span style="color: #ff79c6;">const</span> coder = {
+  name: <span style="color:#f1fa8c;">'Raj Ayush'</span>,
+  skills: [<span style="color:#f1fa8c;">'C++', 'Laravel', 'Python'<br>           'Github', 'MySql',  </span>],
+  hardWorker: <span style="color: #ffb86c;">true</span>,
+  quickLearner: <span style="color: #ffb86c;">true</span>,
+  problemSolver: <span style="color: #ffb86c;">true</span>,
+  <span style="color: #50fa7b;">hireable</span>: <span style="color: #ff79c6;">function</span>() {
+    return (
+      <span style="color:#8be9fd;">this</span>.hardWorker && 
+      <span style="color:#8be9fd;">this</span>.problemSolver &&
+      <span style="color:#8be9fd;">this</span>.skills.length >= 5
+    );
+  }
+};
+      </pre>
+    </div>
+  </div>
+
+  <div class="about Me-Section" style="text-align:center; padding: 50px 0;">
+    <h2 style="font-size: 28px; color: #b38fff;">About Me</h2>
+    <div class="Profile-section" id="BIO" style="display:flex; align-items:center; justify-content:center; flex-wrap: wrap; gap: 40px;">
+      <div class="About Me-left">
+        <img src="./images/WhatsApp Image 2025-04-24 at 01.06.36_6bca1826.jpg" alt="Laptop Illustration" style="width: 400px; max-width: 100%; border-radius: 15px; transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 0 20px rgba(0,255,163,0.5)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'">
+      </div>
+      <div class="profile-right" style="max-width: 600px;">
+        <div class="edu-card" style="background: linear-gradient(145deg, #1e1e3f, #2c2c5a); padding: 20px; margin: 20px 0; border-radius: 15px; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+          <div class="edu-date" style="color: #00ffa3; font-size: 14px; margin-bottom: 5px;">Software Developer</div>
+         
+          <h3 style="margin: 0; color: #ffffff;">💻 Tech Enthusiast | C++ & Python Developer | Laravel Backend Specialist | Networking & OS 
+
+            I’m a passionate and dedicated Computer Science graduate with solid expertise in C++, Laravel (PHP Framework), and Python.
+          <p style="color: #bbbbff;"></p>
+        </div>
+        
+    </div>
+  </div>
+  <!-- Social Links -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<div style="display: flex; justify-content: center; gap: 30px; padding: 40px 0;">
+  <a href="https://github.com/Rajayush2167" target="_blank" style="font-size: 28px; color: white; transition: 0.3s;"><i class="fab fa-github" onmouseover="this.style.color='#00ffa3'" onmouseout="this.style.color='white'"></i></a>
+  <a href="" target="_blank" style="font-size: 28px; color: white; transition: 0.3s;"><i class="fab fa-linkedin" onmouseover="this.style.color='#00ffa3'" onmouseout="this.style.color='white'"></i></a>
+  <a href="https://leetcode.com/u/rajayush2167/" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png" alt="LeetCode" style="width: 28px; filter: brightness(10); transition: 0.3s;" onmouseover="this.style.transform='scale(1.2)'; this.style.filter='brightness(1)'" onmouseout="this.style.transform='scale(1)'; this.style.filter='brightness(10)'">
+  </a>
+</div>
+
+  
+  <div class="Education-Section" style="text-align:center; padding: 50px 0;">
+    <h2 style="font-size: 28px; color: #b38fff;">Education</h2>
+    <div class="education-section" id="education" style="display:flex; align-items:center; justify-content:center; flex-wrap: wrap; gap: 40px;">
+      <div class="education-left">
+        <img src="./images/person-playing-3d-video-games-device.jpg" alt="Laptop Illustration" style="width: 400px; max-width: 100%; border-radius: 15px; transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 0 20px rgba(0,255,163,0.5)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'">
+      </div>
+      <div class="education-right" style="max-width: 600px;">
+        <div class="edu-card" style="background: linear-gradient(145deg, #1e1e3f, #2c2c5a); padding: 20px; margin: 20px 0; border-radius: 15px; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+          <div class="edu-date" style="color: #00ffa3; font-size: 14px; margin-bottom: 5px;">2020 - 2023</div>
+          <h3 style="margin: 0; color: #ffffff;">Bachelor Degree (BSC-IT)</h3>
+          <p style="color: #bbbbff;">Ranchi University</p>
+        </div>
+        <div class="edu-card" style="background: linear-gradient(145deg, #1e1e3f, #2c2c5a); padding: 20px; margin: 20px 0; border-radius: 15px; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+          <div class="edu-date" style="color: #00ffa3; font-size: 14px; margin-bottom: 5px;">2018 - 2020</div>
+          <h3 style="margin: 0; color: #ffffff;">Higher Secondary Certificate</h3>
+          <p style="color: #bbbbff;">Marwari College</p>
+        </div>
+        <div class="edu-card" style="background: linear-gradient(145deg, #1e1e3f, #2c2c5a); padding: 20px; margin: 20px 0; border-radius: 15px; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+          <div class="edu-date" style="color: #00ffa3; font-size: 14px; margin-bottom: 5px;"></div>
+          <h3 style="margin: 0; color: #ffffff;">Secondary School Certificate</h3>
+          <p style="color: #bbbbff;">R.B.Springdale Public School</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="Experience-Section" style="text-align:center; padding: 50px 0;">
+    <h2 style="font-size: 28px; color: #b38fff;">Experience</h2>
+    <div class="Experience-section" id="Experiencen" style="display:flex; align-items:center; justify-content:center; flex-wrap: wrap; gap: 40px;">
+      <div class="education-left">
+        <img src="./images/thoughtworks-gif_dribbble.gif"alt="Laptop Illustration" style="width: 400px; max-width: 100%; border-radius: 15px; transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 0 20px rgba(0,255,163,0.5)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'">
+      </div>
+  
+      <div class="education-right" style="max-width: 600px;">
+        <div class="edu-card" style="background: linear-gradient(145deg, #1e1e3f, #2c2c5a); padding: 20px; margin: 20px 0; border-radius: 15px; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+          <div class="edu-date" style="color: #00ffa3; font-size: 14px; margin-bottom: 5px;">2023-24 Ranchi, India</div>
+          <h3 style="margin: 0; color: #ffffff;">NSL Technology(Intership)</h3>
+          <p style="color: #bbbbff;">Web Development:	  
+            •	Developed and maintained web applications using PHP Laravel framework.
+            •	Designed and implemented database schemas using MySQL.
+            •	Collaborated with a team of developers to deliver projects on time and within budget.
+            
+            </p>
+        </div>
+        
+        
+      </div>
+    </div>
+  </div>
+ 
+  <video width="800" height="500" autoplay muted loop playsinline>
+    <source src="./images/WhatsApp Video 2025-04-25 at 18.42.13_99ec5781.mp4" type="video/mp4">
+   
+  </video>
+
+<script>
+  const slider = document.getElementById('slider');
+  const scrollAmount = 320; // Adjust based on card width
+
+  function scrollSlider(direction) {
+    slider.scrollBy({
+      left: direction * scrollAmount,
+      behavior: 'smooth'
+    });
+  }
+</script>
+
+  <!-- Skills Section -->
+  <div class="skills-section">
+    <h2>Skills</h2>
+    <div class="skills-container">
+      <!-- Laravel Skill Card -->
+      <div class="skill-card">
+        <img src="./images/laravel-1024.png" alt="Laravel">
+        <p>Laravel</p>
+      </div>
+
+      <div class="skill-card">
+        <img src="./images/icons8-github-100.png" alt="Laravel">
+        <p>GitHub</p>
+      </div>
+
+      <!-- C++ Skill Card -->
+      <div class="skill-card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++">
+        <p>C++</p>
+      </div>
+
+      <div class="skill-card">
+        <img src="./images/icons8-html-5-50.png" alt="Laravel">
+        <p>Html</p>
+      </div>
+
+      <div class="skill-card">
+        <img src="./images/icons8-javascript-64.png" alt="Laravel">
+        <p>JavaScript</p>
+      </div>
+
+      <!-- MySQL Skill Card -->
+      <div class="skill-card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL">
+        <p>MySQL</p>
+      </div>
+
+      <!-- Python Skill Card -->
+      <div class="skill-card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+        <p>Python</p>
+      </div>
+
+      <!-- Operating System Skill Card -->
+      <div class="skill-card">
+        <img src="./images/6303588.png" alt="Operating System">
+        <p>Operating System</p>
+      </div>
+
+      <!-- Networking Skill Card -->
+      <div class="skill-card">
+        <img src="./images/Computer-Network-PNG-HD.png" alt="Networking">
+        <p>Networking</p>
+      </div>
+    </div>
+  </div>
+  <section class="projects-section">
+    <h2 class="section-title">Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <img src="./images/Screenshot (2).png" alt="Smooth Smoothies">
+        <h3>Portfolio </h3>
+        <p>Designed and implemented secure user authentication and registration processes using Laravel's built-in 
+          authentication system. </p>
+        <a href="https://rajayushportfolio.netlify.app/" class="btn">View Project <span class="arrow">&rarr;</span></a>
+      </div>
+  
+      <div class="project-card">
+        <img src="./images/Screenshot (3).png" alt="Snazzy Fashion">
+        <h3>Ecommerce Website</h3>
+        <p>Designed and implemented secure user authentication and registration processes using Laravel's built-in 
+          authentication system. 
+          Developed responsive front-end interfaces for login, registration, and password reset using HTML5, CSS3, 
+          JavaScript, and Bootstrap framework, ensuring a seamless user experience across devices. </p>
+        <a href="#" class="btn">View Project <span class="arrow">&rarr;</span></a>
+      </div>
+  
+      <div class="project-card">
+        <img src="./images/Screenshot 2025-04-26 132245.png" alt="Hero Block Gallery">
+        <h3>Online Food App</h3>
+        <p>                                                                                                                                                       
+          Developed an online food ordering application to facilitate convenient ordering and delivery of food from 
+          local restaurants. 
+          Developed responsive and intuitive front-end interfaces using Vue.js and Bootstrap, enabling users to 
+          browse menus, place orders, and track deliveries efficiently. </p>
+        <a href="#" class="btn">View Project <span class="arrow">&rarr;</span></a>
+      </div>
+  
+     
+  
+      
+      
+    </div>
+  </section>
+  
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #121212;
+      color: #ffffff;
+    }
+  
+    .projects-section {
+      padding: 60px 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+  
+    .section-title {
+      font-size: 32px;
+      text-align: center;
+      margin-bottom: 40px;
+      color: #ffffff;
+    }
+  
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 40px;
+    }
+  
+    .project-card {
+      background-color: #1e1e1e;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      padding: 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+  
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+    }
+  
+    .project-card img {
+      width: 100%;
+      border-radius: 6px;
+      margin-bottom: 15px;
+    }
+  
+    .project-card h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+  
+    .project-card p {
+      font-size: 14px;
+      color: #cccccc;
+      margin-bottom: 20px;
+    }
+  
+    .btn {
+      display: inline-block;
+      background-color: #ffffff;
+      color: #121212;
+      padding: 10px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: bold;
+      transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+    }
+  
+    .btn:hover {
+      background-color: #cccccc;
+      color: #000;
+      transform: scale(1.05);
+    }
+  
+    .arrow {
+      display: inline-block;
+      transition: transform 0.3s ease;
+    }
+  
+    .btn:hover .arrow {
+      transform: translateX(4px);
+    }
+    h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+  p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: auto;
+  }
+  </style>
+  
+  <!-- Contact Section -->
+<!-- Contact Section -->
+<div id="contact" style="text-align: center; padding: 50px 20px;">
+  <h2 style="font-size: 28px; color: #b38fff;">Contact Me</h2>
+  <p style="color: #bbbbff; max-width: 600px; margin: 10px auto;">
+  </p>
+
+  <form style="max-width: 500px; margin: 30px auto; display: flex; flex-direction: column; gap: 15px;">
+    <input type="text" placeholder="Your Name" required style="padding: 15px; border-radius: 8px; border: none; background-color: #1e1e3f; color: white;">
+    <input type="email" placeholder="Your Email" required style="padding: 15px; border-radius: 8px; border: none; background-color: #1e1e3f; color: white;">
+    <textarea placeholder="Your Message" rows="5" required style="padding: 15px; border-radius: 8px; border: none; background-color: #1e1e3f; color: white;"></textarea>
+    <button 
+      type="submit"
+      style="padding: 15px; border: none; border-radius: 30px; background: linear-gradient(to right, #ff4da6, #8749ff); color: white; font-size: 16px; cursor: pointer; transition: all 0.3s ease;"
+      onmouseover="this.style.transform='scale(1.05)'; this.style.background='linear-gradient(to right, #8749ff, #ff4da6)';"
+      onmouseout="this.style.transform='scale(1)'; this.style.background='linear-gradient(to right, #ff4da6, #8749ff)';"
+    >
+      Send Message 🚀
+    </button>
+  </form>
+</div>
+
+
+  
+
+  <!-- Scroll To Top Button -->
+  <button class="scroll-btn" onclick="scrollToTop()">
+    <span>↑</span>
+  </button>
+  <footer class="footer">
+    <div>
+        <h2>❤ RAJ AYUSH</h2>
+       
+        <p>Thank you for visiting my personal portfolio website. Connect with me over socials.</p>
+        <p>Please wait for a while all major projects will be listed soon. Till then keep visiting. Connect with me over live chat!</p>
+        
+    </div>
+    <div>
+       <!-- Social Links -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<div style="display: flex; justify-content: center; gap: 30px; padding: 40px 0;">
+  <a href="https://github.com/Rajayush2167" target="_blank" style="font-size: 28px; color: white; transition: 0.3s;"><i class="fab fa-github" onmouseover="this.style.color='#00ffa3'" onmouseout="this.style.color='white'"></i></a>
+  <a href="" target="_blank" style="font-size: 28px; color: white; transition: 0.3s;"><i class="fab fa-linkedin" onmouseover="this.style.color='#00ffa3'" onmouseout="this.style.color='white'"></i></a>
+  <a href="https://leetcode.com/u/rajayush2167/" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png" alt="LeetCode" style="width: 28px; filter: brightness(10); transition: 0.3s;" onmouseover="this.style.transform='scale(1.2)'; this.style.filter='brightness(1)'" onmouseout="this.style.transform='scale(1)'; this.style.filter='brightness(10)'">
+  </a>
+</div>
+   
+    <div>
+        <h3>Have a Questions?</h3>
+        <div class="icon-text"><i class="fas fa-map-marker-alt"></i> Ranchi, Jharkhand, India</div>
+        <div class="icon-text"><i class="fas fa-phone"></i> +91-6201139086</div>
+        <div class="icon-text"><i class="fas fa-envelope"></i> rajayush2167@gmail.com</div>
+    </div>
+</footer>
+
+  <script>
+    // JavaScript for hover effect (optional for advanced features)
+    const skillCards = document.querySelectorAll('.skill-card');
+
+    skillCards.forEach(card => {
+      card.addEventListener('mouseover', () => {
+        card.style.transform = 'scale(1.1)';
+        card.style.boxShadow = '0 6px 15px rgba(255, 45, 32, 0.5)';
+      });
+
+      card.addEventListener('mouseout', () => {
+        card.style.transform = 'scale(1)';
+        card.style.boxShadow = '0 4px 10px rgba(0, 0, 0, 0.3)';
+      });
+    });
+
+    // Scroll To Top Function
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+
+
+    }
+    
+  </script>
+  <!-- AOS JS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+<script>
+  function toggleMenu() {
+    var links = document.getElementById('links');
+    if (links.style.display === 'none') {
+      links.style.display = 'flex';
+    } else {
+      links.style.display = 'none';
+    }
+  }
+  
+  function handleResize() {
+    var menuButton = document.getElementById('menuButton');
+    var links = document.getElementById('links');
+    if (window.innerWidth <= 768) {
+      menuButton.style.display = 'block';
+      links.style.display = 'none';
+    } else {
+      menuButton.style.display = 'none';
+      links.style.display = 'flex';
+    }
+  }
+  
+  // hover with bright neon green
+  function hover(element) {
+    element.style.backgroundColor = "#00FFAA"; // neon green
+    element.style.color = "black"; // make text black for contrast
+    element.style.borderRadius = "5px";
+  }
+  
+  function unhover(element) {
+    element.style.backgroundColor = "transparent"; // back to normal
+    element.style.color = "white"; // white text again
+    element.style.borderRadius = "0";
+  }
+  
+  window.addEventListener('resize', handleResize);
+  window.addEventListener('load', handleResize);
+  </script>
+  
+
+  <!--Start of Tawk.to Script-->
+<script type="text/javascript">
+  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+  (function(){
+  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+  s1.async=true;
+  s1.src='https://embed.tawk.to/680d3712429e411905b98cf2/1ipppu903';
+  s1.charset='UTF-8';
+  s1.setAttribute('crossorigin','*');
+  s0.parentNode.insertBefore(s1,s0);
+  })();
+  </script>
+   <script>
+    particlesJS("particles-js", {
+      particles: {
+        number: { value: 80, density: { enable: true, value_area: 800 }},
+        color: { value: "#ff00ff" },
+        shape: { type: "circle" },
+        opacity: { value: 0.5 },
+        size: { value: 3 },
+        line_linked: {
+          enable: true,
+          distance: 150,
+          color: "#ff00ff",
+          opacity: 0.4,
+          width: 1
+        },
+        move: { enable: true, speed: 2 }
+      },
+      interactivity: {
+        events: {
+          onhover: { enable: true, mode: "repulse" },
+          onclick: { enable: true, mode: "push" }
+        },
+        modes: {
+          repulse: { distance: 100 },
+          push: { particles_nb: 4 }
+        }
+      },
+      retina_detect: true
+    });
+  </script>
+  
+  <!--End of Tawk.to Script-->
+</body>
+</html>
